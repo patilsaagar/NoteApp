@@ -25,7 +25,7 @@
 		88C34A7E288C64580056EB89 /* NoteDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C34A7C288C64580056EB89 /* NoteDetailsCell.xib */; };
 		88C34A8D288CB8640056EB89 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C34A8C288CB8640056EB89 /* DataSource.swift */; };
 		88E140F0289591FA00658315 /* AvailableNotes.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E140ED289591FA00658315 /* AvailableNotes.png */; };
-		88E140F2289591FA00658315 /* ScratchPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E140EF289591FA00658315 /* ScratchPad.png */; };
+		88E140F4289597BA00658315 /* ScratchPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E140F3289597BA00658315 /* ScratchPad.png */; };
 		88EE3695288F205900BEAF2D /* StorageDataOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE3694288F205900BEAF2D /* StorageDataOperations.swift */; };
 		88EE3697288F211000BEAF2D /* NotesDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE3696288F211000BEAF2D /* NotesDataRepository.swift */; };
 		88EE3699288F22E200BEAF2D /* NotesDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE3698288F22E200BEAF2D /* NotesDataAccessObject.swift */; };
@@ -68,7 +68,7 @@
 		88C34A7C288C64580056EB89 /* NoteDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteDetailsCell.xib; sourceTree = "<group>"; };
 		88C34A8C288CB8640056EB89 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		88E140ED289591FA00658315 /* AvailableNotes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvailableNotes.png; sourceTree = "<group>"; };
-		88E140EF289591FA00658315 /* ScratchPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScratchPad.png; sourceTree = "<group>"; };
+		88E140F3289597BA00658315 /* ScratchPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ScratchPad.png; path = ../../../ScratchPad.png; sourceTree = "<group>"; };
 		88EE3694288F205900BEAF2D /* StorageDataOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageDataOperations.swift; sourceTree = "<group>"; };
 		88EE3696288F211000BEAF2D /* NotesDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDataRepository.swift; sourceTree = "<group>"; };
 		88EE3698288F22E200BEAF2D /* NotesDataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDataAccessObject.swift; sourceTree = "<group>"; };
@@ -207,8 +207,8 @@
 		88E140E028958D0D00658315 /* AppScreenshots */ = {
 			isa = PBXGroup;
 			children = (
+				88E140F3289597BA00658315 /* ScratchPad.png */,
 				88E140ED289591FA00658315 /* AvailableNotes.png */,
-				88E140EF289591FA00658315 /* ScratchPad.png */,
 			);
 			path = AppScreenshots;
 			sourceTree = "<group>";
@@ -304,8 +304,8 @@
 				88C34A7E288C64580056EB89 /* NoteDetailsCell.xib in Resources */,
 				8886C00F288B2D6400541302 /* LaunchScreen.storyboard in Resources */,
 				8886C00C288B2D6400541302 /* Assets.xcassets in Resources */,
+				88E140F4289597BA00658315 /* ScratchPad.png in Resources */,
 				8886C00A288B2D6400541302 /* Main.storyboard in Resources */,
-				88E140F2289591FA00658315 /* ScratchPad.png in Resources */,
 				88E140F0289591FA00658315 /* AvailableNotes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
