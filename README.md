@@ -21,3 +21,4 @@ iPhones Note App Replica to Add/ Delete/ Update notes.
 
 ## Screenshots
 <img src="https://github.com/patilsaagar/NoteApp/blob/main/AppScreenshots/AvailableNotes.png" width="200" height="400"/>
+<img src="https://github.com/patilsaagar/NoteApp/blob/main/AppScreenshots/ScratchPad.png" width="200" height="400"/>
