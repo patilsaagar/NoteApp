@@ -1,33 +1,33 @@
 import Foundation
 
-struct NotesDataAccessObject {
+struct NotesDataAccessObject<S: StorageDataOperations, T: TranslateToMO, U:TranslateToEntity> {
     
-    private let notesRepository: NotesDataRepository
-    private let moTranslator: MOTranslator
-    private let entityTranslator: EntityTranslator
+    private let storageOperation: S
+    private let translateToMO: T
+    private let translateToEntity: U
     
-    init(notesRepository: NotesDataRepository,
-         mocTranslator: MOTranslator,
-         entityTranslator: EntityTranslator) {
-        self.notesRepository = notesRepository
-        self.moTranslator = mocTranslator
-        self.entityTranslator = entityTranslator
+    init(storageOperation: S,
+         translateToMO: T,
+         translateToEntity: U) {
+        self.storageOperation = storageOperation
+        self.translateToMO = translateToMO
+        self.translateToEntity = translateToEntity
     }
     
-    func fetchAllNotes() -> [NoteDetails] {
-        return notesRepository.fetchAllNotes().compactMap { self.entityTranslator.translateToDTO(from: $0) }
+    func fetchAllNotes() -> [U.T] {
+        return storageOperation.fetchEntityDetails().compactMap { self.translateToEntity.translateToDTO(from: $0 as! U.U) }
     }
     
-    func storeNote(noteDetails: NoteDetails) {
-        let _ = self.moTranslator.translateToManagedObject(from: noteDetails)
-        notesRepository.storeNote()
+    func storeNote(noteDetails: U.T) {
+        let _ = self.translateToMO.translateToManagedObject(from: noteDetails as! T.T)
+        storageOperation.storeEntityDetails()
     }
     
-    func updateNote(noteDetails: NoteDetails) {
-        notesRepository.updateNote(noteId: noteDetails.id, noteContent: noteDetails.description)
+    func updateNote(noteId: String, noteContent: String) {
+        storageOperation.updateEntityDetails(noteId: noteId, noteContent: noteContent)
     }
     
-    func deleteNote(note: NoteDetails) {
-        notesRepository.deleteNote(noteId: note.id)
+    func deleteNote(noteId: String) {
+        storageOperation.deleteEntityDetails(noteId: noteId)
     }
 }

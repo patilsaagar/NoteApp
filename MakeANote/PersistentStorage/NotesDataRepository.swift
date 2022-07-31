@@ -11,7 +11,7 @@ struct NotesDataRepository: StorageDataOperations {
     }
     // MARK: Public Methods
     
-    func fetchAllNotes() -> [NoteStorageData] {
+    func fetchEntityDetails() -> [NoteStorageData] {
         let fetchRequest: NSFetchRequest<NoteStorageData> = NoteStorageData.fetchRequest()
         let sortDescriptor = NSSortDescriptor(keyPath: \NoteStorageData.noteId, ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -22,11 +22,11 @@ struct NotesDataRepository: StorageDataOperations {
     }
     
     
-    func storeNote() {
+    func storeEntityDetails() {
         StorageProvider.instance.saveContext()
     }
     
-    func updateNote(noteId: String, noteContent: String) {
+    func updateEntityDetails(noteId: String, noteContent: String) {
         let objectToBeModified = getNote(by: noteId)
 
         objectToBeModified?.noteContent = noteContent
@@ -36,7 +36,7 @@ struct NotesDataRepository: StorageDataOperations {
         
     }
     
-    func deleteNote(noteId: String) {
+    func deleteEntityDetails(noteId: String) {
         guard let objectToBeDeleted = getNote(by: noteId) else { return }
         
         viewContext.delete(objectToBeDeleted)

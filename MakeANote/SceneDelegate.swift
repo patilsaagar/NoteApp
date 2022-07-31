@@ -23,12 +23,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
-func createNoteDataAccessObject() -> NotesDataAccessObject {
+typealias NotesDAO = NotesDataAccessObject<NotesDataRepository, MOTranslator, EntityTranslator>
+
+func createNoteDataAccessObject() -> NotesDAO {
     let notesRepository = NotesDataRepository()
     let mocTranslator = MOTranslator()
     let entityTranslator = EntityTranslator()
     
-    let noteDataAccessObject = NotesDataAccessObject(notesRepository: notesRepository, mocTranslator: mocTranslator, entityTranslator: entityTranslator)
+    let noteDataAccessObject = NotesDataAccessObject(storageOperation: notesRepository, translateToMO: mocTranslator, translateToEntity: entityTranslator)
     
     
     return noteDataAccessObject

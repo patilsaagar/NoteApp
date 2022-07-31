@@ -4,7 +4,7 @@ import Combine
 class NotesListViewController: UIViewController {
     // MARK: Private Variables
     private var cancellable = Set<AnyCancellable>()
-    private let notesDataAccessObject: NotesDataAccessObject
+    private let notesDataAccessObject: NotesDAO
     private var dataSource: DataSource!
     private lazy var searchController: UISearchController = {
         let searchBar = UISearchController(searchResultsController: nil)
@@ -25,7 +25,7 @@ class NotesListViewController: UIViewController {
         }
     }
     
-    required init?(coder: NSCoder, notesDataAccessObject: NotesDataAccessObject) {
+    required init?(coder: NSCoder, notesDataAccessObject: NotesDAO) {
         self.notesDataAccessObject = notesDataAccessObject
         super.init(coder: coder)
     }
@@ -137,7 +137,7 @@ extension NotesListViewController: UITableViewDelegate {
 // Call to CRUD operations
 extension NotesListViewController {
     private func editNote(with details: NoteDetails) {
-        notesDataAccessObject.updateNote(noteDetails: details)
+        notesDataAccessObject.updateNote(noteId: details.id, noteContent: details.description)
 
         var notes = dataSource.snapshot().itemIdentifiers
         if let row = notes.firstIndex(where: { $0.id == details.id }) {
@@ -160,7 +160,7 @@ extension NotesListViewController {
     }
     
     private func deleteNoteFromStorage(with details: NoteDetails) {
-        notesDataAccessObject.deleteNote(note: details)
+        notesDataAccessObject.deleteNote(noteId: details.id)
         var snapShot = dataSource.snapshot()
         snapShot.deleteItems([details])
         applySnapshot(notesData: snapShot.itemIdentifiers)

@@ -2,10 +2,10 @@ import Foundation
 
 protocol StorageDataOperations {
     associatedtype T
-    func fetchAllNotes() -> [T]
-    func storeNote()
-    func updateNote(noteId: String, noteContent: String)
-    func deleteNote(noteId: String)
+    func fetchEntityDetails() -> [T]
+    func storeEntityDetails()
+    func updateEntityDetails(noteId: String, noteContent: String)
+    func deleteEntityDetails(noteId: String)
 }
 
 protocol TranslateToEntity {

@@ -16,10 +16,10 @@ class NoteRepositoryTests: XCTestCase {
         // Arrange
         let noteDetails = NoteDetails(id: UUID().uuidString, dateCreated: Date.now, description: "This is first note")
         let _ = translateToManagedObject(from: noteDetails)
-        noteRepository.storeNote()
+        noteRepository.storeEntityDetails()
         
         // Act
-        let fetchedNoteDetails = noteRepository.fetchAllNotes()
+        let fetchedNoteDetails = noteRepository.fetchEntityDetails()
         
         // Assert
         XCTAssertEqual(fetchedNoteDetails.first?.noteContent, "This is first note")
@@ -29,12 +29,12 @@ class NoteRepositoryTests: XCTestCase {
         // Arrange
         let noteDetails = NoteDetails(id: UUID().uuidString, dateCreated: Date.now, description: "This is first note")
         let _ = translateToManagedObject(from: noteDetails)
-        noteRepository.storeNote()
+        noteRepository.storeEntityDetails()
 
         // Act
-        noteRepository.updateNote(noteId: noteDetails.id, noteContent: "This is updated note")
+        noteRepository.updateEntityDetails(noteId: noteDetails.id, noteContent: "This is updated note")
         
-        let fetchedNoteDetailsAfterUpdate = noteRepository.fetchAllNotes()
+        let fetchedNoteDetailsAfterUpdate = noteRepository.fetchEntityDetails()
 
         // Assert
         XCTAssertEqual(fetchedNoteDetailsAfterUpdate.first?.noteContent, "This is updated note")
@@ -48,12 +48,12 @@ class NoteRepositoryTests: XCTestCase {
         let thirdNote = NoteDetails(id: UUID().uuidString, dateCreated: Date.now, description: "This is third note")
         let _ = translateToManagedObject(from: thirdNote)
 
-        noteRepository.storeNote()
+        noteRepository.storeEntityDetails()
 
         // Act
-        noteRepository.deleteNote(noteId: secondNote.id)
+        noteRepository.deleteEntityDetails(noteId: secondNote.id)
 
-        let fetchedNoteDetailsAfterDeletion = noteRepository.fetchAllNotes()
+        let fetchedNoteDetailsAfterDeletion = noteRepository.fetchEntityDetails()
 
         // Assert
         XCTAssertEqual(fetchedNoteDetailsAfterDeletion.count, 1)

@@ -3,13 +3,13 @@ import UIKit
 class CreateNoteViewController: UIViewController, UITextViewDelegate {
 
     var noteCreatedCompletion: ((NoteDetails) -> Void)?
-    private var notesManager: NotesDataAccessObject
+    private var notesManager: NotesDAO
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
       
-    required init?(coder: NSCoder, notesManager: NotesDataAccessObject) {
+    required init?(coder: NSCoder, notesManager: NotesDAO) {
         self.notesManager = notesManager
         super.init(coder: coder)
     }
