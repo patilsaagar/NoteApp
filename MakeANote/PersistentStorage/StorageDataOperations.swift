@@ -9,13 +9,13 @@ protocol StorageDataOperations {
 }
 
 protocol TranslateToEntity {
-    associatedtype T
-    associatedtype U
-    func translateToDTO(from managedObject: U) -> T?
+    associatedtype Entity
+    associatedtype ManagedObject
+    func translateToDTO(from managedObject: ManagedObject) -> Entity?
 }
 
 protocol TranslateToMO {
-    associatedtype T
-    associatedtype U
-    func translateToManagedObject(from dto: T) -> U
+    associatedtype Entity
+    associatedtype ManagedObject
+    func translateToManagedObject(from dto: Entity) -> ManagedObject
 }

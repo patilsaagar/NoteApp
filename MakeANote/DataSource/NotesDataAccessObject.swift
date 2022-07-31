@@ -1,25 +1,25 @@
 import Foundation
 
-struct NotesDataAccessObject<S: StorageDataOperations, T: TranslateToMO, U:TranslateToEntity> {
+struct NotesDataAccessObject<StorageData: StorageDataOperations, Entity: TranslateToMO, ManagedObject:TranslateToEntity> {
     
-    private let storageOperation: S
-    private let translateToMO: T
-    private let translateToEntity: U
+    private let storageOperation: StorageData
+    private let translateToMO: Entity
+    private let translateToEntity: ManagedObject
     
-    init(storageOperation: S,
-         translateToMO: T,
-         translateToEntity: U) {
+    init(storageOperation: StorageData,
+         translateToMO: Entity,
+         translateToEntity: ManagedObject) {
         self.storageOperation = storageOperation
         self.translateToMO = translateToMO
         self.translateToEntity = translateToEntity
     }
     
-    func fetchAllNotes() -> [U.T] {
-        return storageOperation.fetchEntityDetails().compactMap { self.translateToEntity.translateToDTO(from: $0 as! U.U) }
+    func fetchAllNotes() -> [ManagedObject.Entity] {
+        return storageOperation.fetchEntityDetails().compactMap { self.translateToEntity.translateToDTO(from: $0 as! ManagedObject.ManagedObject) }
     }
     
-    func storeNote(noteDetails: U.T) {
-        let _ = self.translateToMO.translateToManagedObject(from: noteDetails as! T.T)
+    func storeNote(noteDetails: ManagedObject.Entity) {
+        let _ = self.translateToMO.translateToManagedObject(from: noteDetails as! Entity.Entity)
         storageOperation.storeEntityDetails()
     }
     
