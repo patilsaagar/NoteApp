@@ -118,6 +118,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		888129582896A11E002DD150 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				88EE3696288F211000BEAF2D /* NotesDataRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		8886BFF6288B2D6300541302 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +148,7 @@
 		8886C001288B2D6300541302 /* MakeANote */ = {
 			isa = PBXGroup;
 			children = (
+				888129582896A11E002DD150 /* Repository */,
 				8881295728969DA6002DD150 /* Extension */,
 				88C34A8E288CBD180056EB89 /* DataSource */,
 				88C34A82288C759A0056EB89 /* Model */,
@@ -161,7 +170,6 @@
 			children = (
 				8886C032288B433700541302 /* StorageProvider.swift */,
 				88EE3694288F205900BEAF2D /* StorageDataOperations.swift */,
-				88EE3696288F211000BEAF2D /* NotesDataRepository.swift */,
 			);
 			path = PersistentStorage;
 			sourceTree = "<group>";
