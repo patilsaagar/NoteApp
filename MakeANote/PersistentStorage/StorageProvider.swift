@@ -31,6 +31,7 @@ class StorageProvider {
             let description = NSPersistentStoreDescription()
             persistentContainer.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
             persistentContainer.persistentStoreDescriptions = [description]
+            description.type = NSInMemoryStoreType
         }
         
         persistentContainer.loadPersistentStores { description, error in

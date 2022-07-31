@@ -3,13 +3,13 @@ import CoreData
 @testable import MakeANote
 
 class NoteRepositoryTests: XCTestCase {
-    var storeProviderStack: StorageProviderStack!
+    var storeProvider: StorageProvider!
     var noteRepository: NotesDataRepository!
     
     override func setUp() {
         super.setUp()
-        storeProviderStack = StorageProviderStack()
-        noteRepository = NotesDataRepository(viewContext: storeProviderStack.persistentContainer.viewContext)
+        storeProvider = StorageProvider(storageType: .inMemory)
+        noteRepository = NotesDataRepository(viewContext: storeProvider.persistentContainer.viewContext)
     }
     
     func test_create_note() {
@@ -63,7 +63,7 @@ class NoteRepositoryTests: XCTestCase {
         
     private func translateToManagedObject(from dto: NoteDetails) -> NoteStorageData {
         
-        let noteStorage = NoteStorageData(context: storeProviderStack.persistentContainer.viewContext)
+        let noteStorage = NoteStorageData(context: storeProvider.persistentContainer.viewContext)
         noteStorage.noteId = dto.id
         noteStorage.noteContent = dto.description
         noteStorage.lastCreated = dto.dateCreated

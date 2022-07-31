@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8808FDAC289434ED0085BBFA /* StorageProviderStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808FDAB289434ED0085BBFA /* StorageProviderStack.swift */; };
 		8808FDAE289435570085BBFA /* NoteRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808FDAD289435570085BBFA /* NoteRepositoryTests.swift */; };
 		88392283288B6FA700F48826 /* MyNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88392281288B6FA700F48826 /* MyNotes.xcdatamodeld */; };
 		884D6C6328951DC50011C99F /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884D6C6228951DC50011C99F /* Translator.swift */; };
@@ -45,7 +44,6 @@
 /* Begin PBXFileReference section */
 		8808FD9D28942B210085BBFA /* MakeANoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeANoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8808FDAA28942DC80085BBFA /* MyNotes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MyNotes 2.xcdatamodel"; sourceTree = "<group>"; };
-		8808FDAB289434ED0085BBFA /* StorageProviderStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProviderStack.swift; sourceTree = "<group>"; };
 		8808FDAD289435570085BBFA /* NoteRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRepositoryTests.swift; sourceTree = "<group>"; };
 		8808FDAF2894409D0085BBFA /* MyNotes 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MyNotes 3.xcdatamodel"; sourceTree = "<group>"; };
 		88392282288B6FA700F48826 /* MyNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyNotes.xcdatamodel; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		8808FD9E28942B210085BBFA /* MakeANoteTests */ = {
 			isa = PBXGroup;
 			children = (
-				8808FDAB289434ED0085BBFA /* StorageProviderStack.swift */,
 				8808FDB0289451990085BBFA /* RepositoryTest */,
 			);
 			path = MakeANoteTests;
@@ -334,7 +331,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8808FDAE289435570085BBFA /* NoteRepositoryTests.swift in Sources */,
-				8808FDAC289434ED0085BBFA /* StorageProviderStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
