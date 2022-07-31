@@ -32,7 +32,7 @@ class NoteRepositoryTests: XCTestCase {
         noteRepository.storeEntityDetails()
 
         // Act
-        noteRepository.updateEntityDetails(noteId: noteDetails.id, noteContent: "This is updated note")
+        noteRepository.updateEntityDetails(id: noteDetails.id, noteContent: "This is updated note")
         
         let fetchedNoteDetailsAfterUpdate = noteRepository.fetchEntityDetails()
 
@@ -51,7 +51,7 @@ class NoteRepositoryTests: XCTestCase {
         noteRepository.storeEntityDetails()
 
         // Act
-        noteRepository.deleteEntityDetails(noteId: secondNote.id)
+        noteRepository.deleteEntityDetails(id: secondNote.id)
 
         let fetchedNoteDetailsAfterDeletion = noteRepository.fetchEntityDetails()
 

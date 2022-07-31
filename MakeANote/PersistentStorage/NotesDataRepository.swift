@@ -26,8 +26,8 @@ struct NotesDataRepository: StorageDataOperations {
         StorageProvider.instance.saveContext()
     }
     
-    func updateEntityDetails(noteId: String, noteContent: String) {
-        let objectToBeModified = getNote(by: noteId)
+    func updateEntityDetails(id: String, noteContent: String) {
+        let objectToBeModified = getNote(by: id)
 
         objectToBeModified?.noteContent = noteContent
         objectToBeModified?.lastCreated = Date.now
@@ -36,8 +36,8 @@ struct NotesDataRepository: StorageDataOperations {
         
     }
     
-    func deleteEntityDetails(noteId: String) {
-        guard let objectToBeDeleted = getNote(by: noteId) else { return }
+    func deleteEntityDetails(id: String) {
+        guard let objectToBeDeleted = getNote(by: id) else { return }
         
         viewContext.delete(objectToBeDeleted)
         StorageProvider.instance.saveContext()

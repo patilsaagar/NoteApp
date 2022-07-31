@@ -24,10 +24,10 @@ struct NotesDataAccessObject<S: StorageDataOperations, T: TranslateToMO, U:Trans
     }
     
     func updateNote(noteId: String, noteContent: String) {
-        storageOperation.updateEntityDetails(noteId: noteId, noteContent: noteContent)
+        storageOperation.updateEntityDetails(id: noteId, noteContent: noteContent)
     }
     
     func deleteNote(noteId: String) {
-        storageOperation.deleteEntityDetails(noteId: noteId)
+        storageOperation.deleteEntityDetails(id: noteId)
     }
 }

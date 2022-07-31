@@ -4,8 +4,8 @@ protocol StorageDataOperations {
     associatedtype T
     func fetchEntityDetails() -> [T]
     func storeEntityDetails()
-    func updateEntityDetails(noteId: String, noteContent: String)
-    func deleteEntityDetails(noteId: String)
+    func updateEntityDetails(id: String, noteContent: String)
+    func deleteEntityDetails(id: String)
 }
 
 protocol TranslateToEntity {
